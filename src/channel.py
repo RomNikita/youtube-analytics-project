@@ -49,5 +49,5 @@ class Channel:
                              "subs": self.subs,
                              "videos_count": self.video_count,
                              "views_count": self.views_count}
-            json.dump(channel_items, file)
+            json.dump(channel_items, file, ensure_ascii=False)
 
