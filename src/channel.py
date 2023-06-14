@@ -69,3 +69,30 @@ class Channel:
                              "videos_count": self.video_count,
                              "views_count": self.views_count}
             json.dump(channel_items, file, ensure_ascii=False)
+
+    def __str__(self):
+        """магический str метод"""
+        return f"{self.title} ({self.url})"
+
+
+    def __add__(self, other):
+        """Метод срабатывает, когда используется оператор сложения.
+	    В параметре other хранится то, что справа от знака +"""
+
+        return int(self.subs) + int(other.subs)
+
+    def __sub__(self, other):
+        """Метод срабатывает, когда используется оператор вычитания"""
+        return int(self.subs) - int(other.subs)
+
+    def __lt__(self, other):
+        return int(self.subs) < int(other.subs)
+
+    def __le__(self, other):
+        return int(self.subs) <= int(other.subs)
+
+    def __gt__(self, other):
+        return int(self.subs) > int(other.subs)
+
+    def __ge__(self, other):
+        return int(self.subs) >= int(other.subs)
