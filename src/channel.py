@@ -30,25 +30,10 @@ class Channel:
             self.subs = i["statistics"]["subscriberCount"]
             self.views_count = i["statistics"]["viewCount"]
 
-    @property
-    def print_title(self):
-        return self.title
 
     @property
-    def print_video_count(self):
-        return self.video_count
-
-    @property
-    def print_description(self):
-        return self.description
-
-    @property
-    def print_subs(self):
-        return self.subs
-
-    @property
-    def print_views_count(self):
-        return self.video_count
+    def channel_id(self):
+        return self.__channel_id
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
